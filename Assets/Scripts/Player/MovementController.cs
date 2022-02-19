@@ -20,11 +20,14 @@ public class MovementController : MonoBehaviour
     public LayerMask groundMask;
     public bool isGrounded;
 
+    [Header("Animation")]
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
 
-       
+        anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         Cursor.visible = true;
     }
@@ -50,8 +53,10 @@ public class MovementController : MonoBehaviour
         //}
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * maxSpeed * Time.deltaTime);
+        anim.SetFloat("Velocity",Vector3.Magnitude( controller.velocity));
         if (Input.GetButton("Jump") && isGrounded)
         {
+           
             velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
 
         }
