@@ -5,46 +5,48 @@ using UnityEngine.AI;
 public class EnemyPatrol : MonoBehaviour
 {
     private NavMeshAgent agent;
-    public Transform startPoint, endPoint;
+    public Transform[] patrolPoints;
     private Transform nextDestination;
-    private bool waitInIdle;
+    private int currentPatrolPointIndex;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        nextDestination = startPoint;
-        waitInIdle = false;
-        
+        currentPatrolPointIndex = 0;
+        nextDestination = patrolPoints[currentPatrolPointIndex];
+        agent.SetDestination(nextDestination.position);
+
     }
 
    
     void Update()
     {
-           agent.SetDestination(nextDestination.position);
+          
 
             GetComponent<Animator>().SetFloat("Velocity", Vector3.Magnitude(agent.velocity));
-
-            if (agent.remainingDistance <= 0)
-            {
-              
-                if (nextDestination == startPoint)
-                {
-                    nextDestination = endPoint;
-
-                }
-                else
-                {
-
-                    nextDestination = startPoint;
-
-                }
-
-            }
+        MoveToNextPoint();
+           
         
 
     }
-    private void OnCollisionEnter(Collision collision)
+  
+    private void MoveToNextPoint()
     {
-       
+
+        if (agent.remainingDistance <= 0.1f)
+        {
+
+            if (currentPatrolPointIndex < patrolPoints.Length-1)
+            {
+                currentPatrolPointIndex++;
+            }
+            else
+            {
+                currentPatrolPointIndex = 0;
+            }
+            print(currentPatrolPointIndex);
+            nextDestination = patrolPoints[currentPatrolPointIndex];
+            agent.SetDestination(nextDestination.position);
+
+        }
     }
-    
 }
