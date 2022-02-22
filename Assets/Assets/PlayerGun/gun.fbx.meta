@@ -1,17 +1,19 @@
 fileFormatVersion: 2
-guid: f490cc2f316087f44af19075862b7aaa
+guid: e512843a303c9c94e92787bc62a10133
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel - Satin
+    second: {fileID: 2100000, guid: 14e89b6bd8811d5479e722f3934a82fb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -75,17 +77,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 4ed7f8c2dc8809349bb810d57f5100b1
-  - fffbfb445a79cf744a4e75ab7363502c
-  - 0cf74f3b6a0da984a9be182c806fc3f1
-  - 0457bef68a8f76344a5827c09e9fec2e
-  - 653d2fd901eff99419603232b484bfc3
-  - 4d51c2cc2fe661342b84438bc0827b41
-  - 69bc7317dcb76f14db3760f2df1adf3b
-  - c11f8be08fb5be846bee6f0181350ed1
-  - 69fce6312e3ddf845bae4c44ecf907ca
-  - 22d3f3b200e5326438ffe3a1052523a9
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
