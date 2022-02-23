@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
 
-
+        
 
         if(Vector3.Magnitude(GetComponent<CharacterController>().velocity) == 0)
         {
