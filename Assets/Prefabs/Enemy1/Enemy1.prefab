@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1282046616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282046617}
+  m_Layer: 0
+  m_Name: GunSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282046617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282046616}
+  m_LocalRotation: {x: -0.45853183, y: 0.57155144, z: 0.51970285, w: 0.43930238}
+  m_LocalPosition: {x: -0.073, y: 0.12, z: 0.052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2379725335658126425}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -94.482, y: -379.097, z: 480.20502}
 --- !u!1 &118270428114701984
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +743,7 @@ Transform:
   - {fileID: 2896333832788061177}
   - {fileID: 5061942501694407837}
   - {fileID: 5587214979604658031}
+  - {fileID: 1282046617}
   m_Father: {fileID: 1954713655852258873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -978,6 +1009,7 @@ GameObject:
   - component: {fileID: 4085846093634966836}
   - component: {fileID: 4085846093634966843}
   - component: {fileID: 4085846093634966837}
+  - component: {fileID: 899315185}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -1089,6 +1121,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &899315185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779292555275968192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85369ef59082ac14eb09784ed615fa7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 2185240181454850455, guid: 507fcce733af9bd48aefdf883c1ab850, type: 3}
+  weaponSocket: {fileID: 1282046617}
 --- !u!1 &3953520172630117092
 GameObject:
   m_ObjectHideFlags: 0
