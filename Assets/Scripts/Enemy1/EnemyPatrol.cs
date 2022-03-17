@@ -22,7 +22,7 @@ public class EnemyPatrol : MonoBehaviour
     {
           
 
-            GetComponent<Animator>().SetFloat("Velocity", Vector3.Magnitude(agent.velocity));
+        GetComponent<Animator>().SetFloat("Velocity", Vector3.Magnitude(agent.velocity));
         MoveToNextPoint();
            
         
@@ -43,7 +43,7 @@ public class EnemyPatrol : MonoBehaviour
             {
                 currentPatrolPointIndex = 0;
             }
-            print(currentPatrolPointIndex);
+          
             nextDestination = patrolPoints[currentPatrolPointIndex];
             agent.SetDestination(nextDestination.position);
 
