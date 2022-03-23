@@ -51,7 +51,7 @@ public class AttackState : State
     }
     IEnumerator causeDelay()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(bullet);
         bulletshoot = false;
     }

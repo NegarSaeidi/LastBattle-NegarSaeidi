@@ -13,6 +13,7 @@ public class TakeDamage : MonoBehaviour
             if (healthbars.Count > 0)
             {
                 Destroy(healthbars[healthbars.Count - 1]);
+                GetComponent<Animator>().SetTrigger("TakeDamage");
                 healthbars.RemoveAt(healthbars.Count - 1);
 
 
