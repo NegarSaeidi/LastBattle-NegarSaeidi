@@ -12138,6 +12138,7 @@ MonoBehaviour:
   - {fileID: 538005245}
   - {fileID: 378239809}
   walkActivated: 0
+  inAttackMode: 0
   player: {fileID: 919132149080204260}
   turnSpeed: 0
 --- !u!1001 &765546340
@@ -17953,6 +17954,7 @@ MonoBehaviour:
   - {fileID: 1910036024}
   - {fileID: 1283266933}
   walkActivated: 0
+  inAttackMode: 0
   player: {fileID: 919132149080204260}
   turnSpeed: 5
 --- !u!1 &1232077377
@@ -30579,6 +30581,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 303797967}
     m_Modifications:
+    - target: {fileID: 1172987137, guid: fb9d891d4f5fa3449940cda363c13db6, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+    - target: {fileID: 2022770706, guid: fb9d891d4f5fa3449940cda363c13db6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.856
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022770706, guid: fb9d891d4f5fa3449940cda363c13db6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.431
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022770706, guid: fb9d891d4f5fa3449940cda363c13db6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.068
+      objectReference: {fileID: 0}
     - target: {fileID: 919132147944210006, guid: fb9d891d4f5fa3449940cda363c13db6, type: 3}
       propertyPath: player
       value: 
