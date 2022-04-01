@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public GameObject playerBullet;
+    public GameObject bulletSpawnPoint;
+    public GameObject ShootPoint;
+    public int bulletSpeed;
    
     void Update()
     {
