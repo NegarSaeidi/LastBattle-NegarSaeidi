@@ -11,17 +11,18 @@ public class Shooting : MonoBehaviour
     private GameObject bullet;
     public bool fire;
     private int TotalBulletCount;
-    private int RemainingBullets;
+    public int RemainingBullets;
     public TextMeshProUGUI RemaingingAmmoText, TotalAmmoText;
     private void Start()
     {
-        RemainingBullets = 10;
-        TotalBulletCount = 10;
+        RemainingBullets = 100;
+        TotalBulletCount = 100;
         GameObject gun = GameObject.FindGameObjectWithTag("Gun");
      
         bulletSpawnPoint = gun.transform.Find("BulletSpawn");
         ShootPoint = gun.transform.Find("ShootDirection");
         TotalAmmoText.text = TotalBulletCount.ToString();
+        RemaingingAmmoText.text = RemainingBullets.ToString();
     }
     void Update()
     {
@@ -30,6 +31,7 @@ public class Shooting : MonoBehaviour
         
         if(Vector3.Magnitude(GetComponent<CharacterController>().velocity) == 0)
         {
+           
             if (Input.GetMouseButton(0))
             {
                 GetComponent<Animator>().SetBool("ShootingIdle", true);
@@ -65,20 +67,28 @@ public class Shooting : MonoBehaviour
             {
                 RemainingBullets = TotalBulletCount;
                 fire = true;
-              
+             
                 GetComponent<Animator>().SetTrigger("Reloading");
                 StartCoroutine(Reloading());
             }
             else
             {
+                fire = true;
                 RemainingBullets--;
                 RemaingingAmmoText.text = RemainingBullets.ToString();
                 bullet = Instantiate(playerBullet, bulletSpawnPoint.transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody>().velocity = (ShootPoint.position - bulletSpawnPoint.position).normalized * bulletSpeed;
-               
+                StartCoroutine(WaitBeforeShooting());
             }
           
         }
+    }
+    IEnumerator WaitBeforeShooting()
+    {
+        yield return new WaitForSeconds(0.1f);
+        
+        fire = false;
+
     }
     IEnumerator Reloading()
     {

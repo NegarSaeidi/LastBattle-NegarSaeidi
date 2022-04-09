@@ -17,5 +17,6 @@ public class ItemScriptableObject : ScriptableObject
 public enum ItemType
 {
   ELIXIR_OF_LIFE,
-  ELIXIR_OF_LIFE_BOOSTER
+  ELIXIR_OF_LIFE_BOOSTER,
+  SILENT_SHIELD
 }

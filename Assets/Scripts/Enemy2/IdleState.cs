@@ -18,7 +18,7 @@ public class IdleState : State
             ifIsInWalkMode = false;
             walkstate.ifIsInWalkMode = true;
             GetComponentInParent<Animator>().SetBool("Attack", false);
-            GetComponentInParent<Animator>().SetBool("Die", false);
+            GetComponentInParent<Animator>().SetBool("Death", false);
             GetComponentInParent<Animator>().SetBool("Velocity",true);
             return walkstate;
         }

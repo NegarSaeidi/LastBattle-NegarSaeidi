@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02941c84a4856fb48bc1f4c85b955452, type: 3}
-  m_Name: NewItem
+  m_Name: SilentShield
   m_EditorClassIdentifier: 
-  name: NewItem
-  type: 0
+  name: SilentShield
+  type: 2
   slotPrefab: {fileID: 2710463031531982065, guid: 8784c6a1e9d4efa4c9620ea1eb8d3dfb, type: 3}
-  itemIcon: {fileID: 1466453622626696968, guid: e8c649ca56b7f6c4ca659b755af4a112, type: 3}
+  itemIcon: {fileID: 21300000, guid: 2cce020fc1636f745820d67291b58f3b, type: 3}
   description: 

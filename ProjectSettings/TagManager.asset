@@ -9,6 +9,12 @@ TagManager:
   - Bullet
   - Pickup
   - Gun
+  - EnemyGun1
+  - EnemyGun2
+  - EnemyGun3
+  - EnemyGun4
+  - EnemyGun
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

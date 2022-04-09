@@ -20,7 +20,7 @@ AnimatorStateMachine:
     m_Position: {x: 35.600006, y: 321.8, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 559095207015695230}
-    m_Position: {x: 437.6, y: 243.79999, z: 0}
+    m_Position: {x: 570, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1954998951454404829}
     m_Position: {x: 260, y: 100, z: 0}
@@ -178,7 +178,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Reloading
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2145488940278363869}
   m_Solo: 0
@@ -512,43 +515,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ShootingIdle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ShootingInMove
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Die
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: TakeDamage
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Pickup
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Reloading
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -575,7 +578,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1738295208209226850}
   - {fileID: -4792268903245879232}
-  - {fileID: -3782510207359941057}
   - {fileID: 8044675506184333054}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -754,10 +756,8 @@ AnimatorState:
   m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 5321339263190858279}
   - {fileID: 8049447726230375181}
   - {fileID: 3713657826467254757}
-  - {fileID: -7951685642020055252}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -952,7 +952,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: 2171541402866715264}
   - {fileID: -8245246667974414248}
-  - {fileID: -949629253841849219}
   - {fileID: -6297244779251854423}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}

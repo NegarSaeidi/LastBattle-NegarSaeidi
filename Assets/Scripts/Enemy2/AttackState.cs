@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class AttackState : State
 {
 
@@ -25,10 +25,13 @@ public class AttackState : State
     {
         if(!bulletshoot)
         SpellAttack();
+        else
+            transform.GetComponentInParent<NavMeshAgent>().isStopped = false;
     }
 
     private void SpellAttack()
     {
+        transform.GetComponentInParent<NavMeshAgent>().isStopped = true;
 
         sight.origin = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         sight.direction = transform.forward;
