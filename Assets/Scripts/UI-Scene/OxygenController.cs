@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class OxygenController : MonoBehaviour
 {
     public GameObject[] OxygenBars;
-    public float time;
+    public static float time, totalTime;
     private int index ;
     public int alreadyChecked = 0;
    // public GameObject gameOverPanel;
     private void Start()
     {
         time = 360;
+        totalTime = 360;
         index = OxygenBars.Length - 1;
     }
     void Update()
@@ -27,14 +28,14 @@ public class OxygenController : MonoBehaviour
             }
             else
             {
-
-                
+              
             }
         }
         else
         {
 
-          
+           
+            SceneManager.LoadScene("GameOver");
             //  gameOverPanel.SetActive(true);
         }
       

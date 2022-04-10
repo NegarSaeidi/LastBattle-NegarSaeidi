@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class TakeDamage : MonoBehaviour
 {
     public List<GameObject> healthbars;
@@ -26,8 +26,15 @@ public class TakeDamage : MonoBehaviour
     {
         if (healthbars.Count <= 0)
         {
-            
+          
             GetComponent<Animator>().SetBool("Die", true);
+            StartCoroutine(delayBeforeDeath());
         }
+    }
+
+    IEnumerator delayBeforeDeath()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("GameOver");
     }
 }

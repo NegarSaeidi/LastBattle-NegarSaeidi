@@ -37,6 +37,8 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             ELixirGenerated = true;
             var pickup = Instantiate(Elixir, EnemyPosition, Quaternion.identity);
+           
+
         }
     }
 }

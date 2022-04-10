@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MovementController : MonoBehaviour
 {
 
@@ -23,6 +23,8 @@ public class MovementController : MonoBehaviour
     [Header("Animation")]
     private Animator anim;
 
+    public static int elixirCount, boosterCount, shieldCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +34,16 @@ public class MovementController : MonoBehaviour
         Cursor.visible = true;
     }
 
+    private void CheckForWin()
+    {
+        if (elixirCount == 8 && boosterCount == 3)
+            SceneManager.LoadScene("Win");
+
+    }
     // Update is called once per frame
     void Update()
     {
+        CheckForWin();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundRadius, groundMask);
         if (isGrounded && velocity.y < 0)
         {

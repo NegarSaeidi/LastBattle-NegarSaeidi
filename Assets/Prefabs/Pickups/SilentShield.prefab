@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 2168058810012461347}
   - component: {fileID: 919132148393755113}
   m_Layer: 0
-  m_Name: magic circle model
+  m_Name: SilentShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

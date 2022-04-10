@@ -29,14 +29,29 @@ public class AssignInventoryToPlayer : MonoBehaviour
 
         {
 
-            //------VINEET's note: this is item score on item pickup
+           
            
             var item = other.GetComponent<RepresentsItem>();
             if (item)
             {
 
                 inventory.AddItem(item.item, 1, item.icon);
-                UpdateInventory();
+                if(item.item.name == "LIFE_ELIXIR_BOOSTER")
+                {
+                    MovementController.boosterCount++;
+                  
+                }
+                else if (item.item.name == "LIFE_ELIXIR")
+                {
+                    MovementController.elixirCount++;
+                   
+                }
+                else
+                {
+                    MovementController.shieldCount++;
+                  
+                }
+                    UpdateInventory();
                 Destroy(other.gameObject);
             }
 

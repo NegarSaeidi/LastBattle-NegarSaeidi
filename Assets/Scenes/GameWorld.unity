@@ -8193,7 +8193,6 @@ MonoBehaviour:
   - {fileID: 905821624}
   - {fileID: 646419653}
   - {fileID: 1062422444}
-  time: 0
   alreadyChecked: 0
 --- !u!1 &391096472
 GameObject:
