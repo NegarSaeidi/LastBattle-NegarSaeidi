@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
     public float jumpHeight = 3.0f;
     public Vector3 velocity;
 
-
+    public GameObject pausePanel;
     [Header("Ground Detection")]
     public Transform groundCheck;
     public float groundRadius = 0.5f;
@@ -23,6 +23,7 @@ public class MovementController : MonoBehaviour
     [Header("Animation")]
     private Animator anim;
 
+    public static bool isPaused;
     public static int elixirCount, boosterCount, shieldCount;
     public static bool ShieldActivated,ShieldInUse;
     // Start is called before the first frame update
@@ -66,6 +67,12 @@ public class MovementController : MonoBehaviour
         {
             velocity.y = -2.0f;
         }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            isPaused = true;
+            pausePanel.SetActive(true);
+            Time.timeScale = 0;
+        }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         //if (x != 0 || z != 0)
@@ -89,7 +96,12 @@ public class MovementController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
+    public void OnResume()
+    {
+        isPaused = false;
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;

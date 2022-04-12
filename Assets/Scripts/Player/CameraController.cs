@@ -16,12 +16,15 @@ public class CameraController : MonoBehaviour
     }
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity;
+        if (!MovementController.isPaused)
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensivity;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity;
 
-        // XRotation -= mouseY;
-        XRotation = Mathf.Clamp(XRotation, -90.0f, 90.0f);
-        transform.localRotation = Quaternion.Euler(XRotation, 0.0f, 0.0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+            // XRotation -= mouseY;
+            XRotation = Mathf.Clamp(XRotation, -90.0f, 90.0f);
+            transform.localRotation = Quaternion.Euler(XRotation, 0.0f, 0.0f);
+            playerBody.Rotate(Vector3.up * mouseX);
+        }
     }
 }
