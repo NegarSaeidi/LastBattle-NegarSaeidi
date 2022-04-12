@@ -38,13 +38,14 @@ public class AssignInventoryToPlayer : MonoBehaviour
                 inventory.AddItem(item.item, 1, item.icon);
                 if(item.item.name == "LIFE_ELIXIR_BOOSTER")
                 {
+                    other.GetComponent<AudioSource>().Play();
                     MovementController.boosterCount++;
                   
                 }
                 else if (item.item.name == "LIFE_ELIXIR")
                 {
                     MovementController.elixirCount++;
-                   
+                    other.GetComponent<AudioSource>().Play();
                 }
                 else
                 {
@@ -52,7 +53,8 @@ public class AssignInventoryToPlayer : MonoBehaviour
                    
                 }
                     UpdateInventory();
-                Destroy(other.gameObject);
+                other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y+500, other.transform.position.z);
+                Destroy(other.gameObject,2.0f);
             }
 
         }

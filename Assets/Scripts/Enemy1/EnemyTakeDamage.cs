@@ -7,6 +7,7 @@ public class EnemyTakeDamage : MonoBehaviour
     public int health;
     public GameObject Elixir;
     private bool ELixirGenerated;
+    public static bool enemyIsdying;
     private void Start()
     {
         health = 20;
@@ -21,6 +22,7 @@ public class EnemyTakeDamage : MonoBehaviour
                 health--;
             else
             {
+                enemyIsdying = true;
                 GetComponent<Animator>().SetBool("Death", true);
                 StartCoroutine(delayBeforeDeath( other));
             }
@@ -37,8 +39,8 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             ELixirGenerated = true;
             var pickup = Instantiate(Elixir, EnemyPosition, Quaternion.identity);
-           
 
+            enemyIsdying = false;
         }
     }
 }

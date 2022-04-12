@@ -73,6 +73,8 @@ public class Shooting : MonoBehaviour
             }
             else
             {
+               // if (!GetComponent<AudioSource>().isPlaying)
+                    GetComponent<AudioSource>().Play();
                 fire = true;
                 RemainingBullets--;
                 RemaingingAmmoText.text = RemainingBullets.ToString();

@@ -29,18 +29,19 @@ public class EnemyShooting : MonoBehaviour
             bulletSpawnPoint = gun.transform.Find("BulletSpawn");
             ShootPoint = gun.transform.Find("ShootDirection");
         }
-        if (!fire && GetComponent<EnemyPatrol>().InAttackMode)
+        if (!fire && GetComponent<EnemyPatrol>().InAttackMode && !EnemyTakeDamage.enemyIsdying)
         {
+            GetComponent<AudioSource>().Play();
             fire = true;
             Shoot();
         }
     }
     private void Shoot()
     {
-            
-               
 
-                bullet = Instantiate(playerBullet, bulletSpawnPoint.transform.position, Quaternion.identity);
+      
+
+        bullet = Instantiate(playerBullet, bulletSpawnPoint.transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody>().velocity = (ShootPoint.position - bulletSpawnPoint.position).normalized * bulletSpeed;
                 StartCoroutine(WaitBeforeShooting());
 
