@@ -36,7 +36,7 @@ public class MovementController : MonoBehaviour
 
     private void CheckForWin()
     {
-        if (elixirCount == 8 && boosterCount == 3)
+        if (elixirCount == 11 && boosterCount == 3)
             SceneManager.LoadScene("Win");
 
     }
