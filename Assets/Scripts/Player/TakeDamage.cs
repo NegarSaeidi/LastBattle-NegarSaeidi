@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TakeDamage : MonoBehaviour
 {
+    public GameObject barParent,bar;
     public List<GameObject> healthbars;
+    public static bool BoostHealth, addHealth;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
@@ -24,6 +26,31 @@ public class TakeDamage : MonoBehaviour
     }
     private void Update()
     {
+        if(BoostHealth)
+        {
+            if (healthbars.Count != 31)
+            {
+                var barTemp = Instantiate(bar, barParent.transform);
+                var barTemp2 = Instantiate(bar, barParent.transform);
+                // 
+                healthbars.Add(barTemp);
+                healthbars.Add(barTemp2);
+                BoostHealth = false;
+            }
+          
+          
+        }
+        if(addHealth)
+        {
+            if (healthbars.Count != 31)
+            {
+                var barTemp = Instantiate(bar, barParent.transform);
+                // 
+                healthbars.Add(barTemp);
+                addHealth = false;
+            }
+           
+        }
         if (healthbars.Count <= 0)
         {
           

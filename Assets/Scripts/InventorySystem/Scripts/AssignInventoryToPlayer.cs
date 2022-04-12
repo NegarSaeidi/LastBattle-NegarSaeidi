@@ -49,7 +49,7 @@ public class AssignInventoryToPlayer : MonoBehaviour
                 else
                 {
                     MovementController.shieldCount++;
-                  
+                   
                 }
                     UpdateInventory();
                 Destroy(other.gameObject);

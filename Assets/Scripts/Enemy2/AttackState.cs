@@ -17,16 +17,19 @@ public class AttackState : State
     public Transform firePoint;
     private Ray sight;
     private RaycastHit rayHit;
-    public float speed=0.01f;
+    public float speed = 0.01f;
 
     private bool bulletshoot;
     private GameObject bullet;
     private void Update()
     {
-        if(!bulletshoot)
-        SpellAttack();
-        else
-            transform.GetComponentInParent<NavMeshAgent>().isStopped = false;
+        if (!MovementController.ShieldInUse )
+        {
+            if (!bulletshoot)
+                SpellAttack();
+            else
+                transform.GetComponentInParent<NavMeshAgent>().isStopped = false;
+        }
     }
 
     private void SpellAttack()
@@ -35,7 +38,7 @@ public class AttackState : State
 
         sight.origin = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         sight.direction = transform.forward;
-       
+
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         if (Physics.Raycast(sight, out rayHit))
@@ -46,7 +49,7 @@ public class AttackState : State
                 ShootProjectile();
                 bulletshoot = true;
                 StartCoroutine(causeDelay());
-             
+
             }
 
 
@@ -73,7 +76,7 @@ public class AttackState : State
             walkstate.ifIsInWalkMode = true;
             GetComponentInParent<Animator>().SetBool("Attack", false);
             GetComponentInParent<Animator>().SetBool("Velocity", true);
-            return walkstate;
+            return idlestate;
         }
         else if (!ifIsInAttackRange)
         {

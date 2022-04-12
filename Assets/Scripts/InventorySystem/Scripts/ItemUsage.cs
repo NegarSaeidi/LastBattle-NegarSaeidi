@@ -24,14 +24,7 @@ public class ItemUsage : MonoBehaviour
 
     public void OnItemClicked()
     {
-        //if (closeButton == null)
-        //{
-        //    GameObject[] button = GameObject.FindGameObjectsWithTag("CloseButton");
-        //    closeButton = button[0];
-        //}
-
-        //closeButton.GetComponent<Button>().interactable = false;
-        //StartCoroutine(delayForRepositioning());
+      
 
     
         if (int.Parse(gameObject.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text) > 1)
@@ -43,9 +36,13 @@ public class ItemUsage : MonoBehaviour
             {
                 if (inventory.listOfItems[i].item.name == gameObject.name)
                 {
-                
-                    // Item usage >> Implement potions
 
+                    if (gameObject.name == "SilentShield")
+                        MovementController.ShieldActivated = true;
+                    else if (gameObject.name == "LIFE_ELIXIR_BOOSTER")
+                        TakeDamage.BoostHealth = true;
+                    else if (gameObject.name == "LIFE_ELIXIR")
+                        TakeDamage.addHealth = true;
                     Debug.Log("Item destroyed type: " + inventory.listOfItems[i].item.type);
                  
 
@@ -62,7 +59,12 @@ public class ItemUsage : MonoBehaviour
                    
 
                     AssignInventoryToPlayer.visibleItems.Remove(inventory.listOfItems[i].item);
-
+                    if (gameObject.name == "SilentShield")
+                        MovementController.ShieldActivated = true;
+                    else if (gameObject.name == "LIFE_ELIXIR_BOOSTER")
+                        TakeDamage.BoostHealth = true;
+                    else if (gameObject.name == "LIFE_ELIXIR")
+                        TakeDamage.addHealth = true;
                     // Item usage >> Potions and Spell books
                     Debug.Log("Item destroyed type: " + inventory.listOfItems[i].item.type);
                   

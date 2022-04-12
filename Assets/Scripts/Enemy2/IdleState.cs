@@ -6,20 +6,20 @@ public class IdleState : State
 {
     public WalkState walkstate;
     public AttackState attackstate;
-    public DeathState   deathstate;
+    public DeathState deathstate;
     public bool ifIsInAttackRange;
     public bool ifIsInWalkMode;
     public bool IfDied;
-    
+
     public override State RunCurrentState()
     {
-       if(ifIsInWalkMode)
+        if (ifIsInWalkMode)
         {
             ifIsInWalkMode = false;
             walkstate.ifIsInWalkMode = true;
             GetComponentInParent<Animator>().SetBool("Attack", false);
             GetComponentInParent<Animator>().SetBool("Death", false);
-            GetComponentInParent<Animator>().SetBool("Velocity",true);
+            GetComponentInParent<Animator>().SetBool("Velocity", true);
             return walkstate;
         }
         else if (ifIsInAttackRange)
@@ -30,7 +30,7 @@ public class IdleState : State
             GetComponentInParent<Animator>().SetBool("Attack", true);
             return attackstate;
         }
-       else if(IfDied)
+        else if (IfDied)
         {
             IfDied = false;
             GetComponentInParent<Animator>().SetBool("Velocity", false);
@@ -38,7 +38,7 @@ public class IdleState : State
             GetComponentInParent<Animator>().SetBool("Die", true);
             return deathstate;
         }
-       else
+        else
         {
             return this;
         }
@@ -46,5 +46,5 @@ public class IdleState : State
 
     }
 
-    
+
 }

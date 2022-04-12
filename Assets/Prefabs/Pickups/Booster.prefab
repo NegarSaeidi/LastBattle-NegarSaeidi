@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 5d152be2725c99d4fa89437e03919746, type: 2}
-  icon: {fileID: 21300000, guid: 96c290b22ecb95443bb4a57718222b29, type: 3}
+  icon: {fileID: 21300000, guid: c8aed6b53cbccb741be280584636d7ac, type: 3}
 --- !u!1 &8046257529352284339
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class MovementController : MonoBehaviour
     private Animator anim;
 
     public static int elixirCount, boosterCount, shieldCount;
-
+    public static bool ShieldActivated,ShieldInUse;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +40,27 @@ public class MovementController : MonoBehaviour
             SceneManager.LoadScene("Win");
 
     }
+    private void IfShieldIsOn()
+    {
+        if(ShieldActivated)
+        {
+            ShieldInUse = true;
+            ShieldActivated = false;
+            print("Inuse");
+            StartCoroutine(shiledDuration());
+        }
+    }
+    IEnumerator shiledDuration()
+    {
+        yield return new WaitForSeconds(10.0f);
+        ShieldInUse = false;
+        print("DoneUse");
+    }
     // Update is called once per frame
     void Update()
     {
         CheckForWin();
+        IfShieldIsOn();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundRadius, groundMask);
         if (isGrounded && velocity.y < 0)
         {
