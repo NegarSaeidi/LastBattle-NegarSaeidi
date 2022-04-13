@@ -89,12 +89,12 @@ public class MovementController : MonoBehaviour
             Vector3 move = transform.right * x + transform.forward * z;
             controller.Move(move * maxSpeed * Time.deltaTime);
             anim.SetFloat("Velocity", Vector3.Magnitude(controller.velocity));
-            if (Input.GetButton("Jump") && isGrounded)
-            {
+            //if (Input.GetButton("Jump") && isGrounded)
+            //{
 
-                velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+            //    velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
 
-            }
+            //}
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
         }
