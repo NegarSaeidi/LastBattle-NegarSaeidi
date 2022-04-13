@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     private int TotalBulletCount;
     public int RemainingBullets;
     public TextMeshProUGUI RemaingingAmmoText, TotalAmmoText;
+    public static bool IsReloading;
     private void Start()
     {
         RemainingBullets = 100;
@@ -67,7 +68,7 @@ public class Shooting : MonoBehaviour
             {
                 RemainingBullets = TotalBulletCount;
                 fire = true;
-             
+                IsReloading = true;
                 GetComponent<Animator>().SetTrigger("Reloading");
                 StartCoroutine(Reloading());
             }
@@ -94,8 +95,9 @@ public class Shooting : MonoBehaviour
     }
     IEnumerator Reloading()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         RemaingingAmmoText.text = RemainingBullets.ToString();
+        IsReloading = false;
         fire = false;
         
     }

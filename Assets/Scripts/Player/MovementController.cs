@@ -73,28 +73,31 @@ public class MovementController : MonoBehaviour
             pausePanel.SetActive(true);
             Time.timeScale = 0;
         }
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        //if (x != 0 || z != 0)
-        //{
-
-        //    if (GetComponent<AudioSource>().isPlaying == false)
-        //    {
-
-        //        GetComponent<AudioSource>().Play();
-        //    }
-        //}
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * maxSpeed * Time.deltaTime);
-        anim.SetFloat("Velocity",Vector3.Magnitude( controller.velocity));
-        if (Input.GetButton("Jump") && isGrounded)
+        if (!Shooting.IsReloading)
         {
-           
-            velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+            //if (x != 0 || z != 0)
+            //{
 
+            //    if (GetComponent<AudioSource>().isPlaying == false)
+            //    {
+
+            //        GetComponent<AudioSource>().Play();
+            //    }
+            //}
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * maxSpeed * Time.deltaTime);
+            anim.SetFloat("Velocity", Vector3.Magnitude(controller.velocity));
+            if (Input.GetButton("Jump") && isGrounded)
+            {
+
+                velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+
+            }
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
         }
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
     }
     public void OnResume()
     {
