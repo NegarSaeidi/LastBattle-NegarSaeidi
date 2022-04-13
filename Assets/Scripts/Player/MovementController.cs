@@ -8,7 +8,7 @@ public class MovementController : MonoBehaviour
     public CharacterController controller;
 
     [Header("Movement properties")]
-    public float maxSpeed = 10.0f;
+    public float maxSpeed = 5.0f;
     public float gravity = -30.0f;
     public float jumpHeight = 3.0f;
     public Vector3 velocity;

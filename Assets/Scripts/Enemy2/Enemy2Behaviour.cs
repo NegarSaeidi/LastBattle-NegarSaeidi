@@ -26,7 +26,7 @@ public class Enemy2Behaviour : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Magnitude((player.transform.position - transform.position)) < 5 && (!MovementController.ShieldInUse))
+        if (Vector3.Magnitude((player.transform.position - transform.position)) < 3 && (!MovementController.ShieldInUse))
         {
             transform.Find("States").transform.Find("Idle").GetComponent<IdleState>().ifIsInAttackRange = true;
             Vector3 targetDelta = player.transform.position - transform.position;
@@ -121,6 +121,6 @@ public class Enemy2Behaviour : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, 5);
+        Gizmos.DrawWireSphere(transform.position, 3);
     }
 }

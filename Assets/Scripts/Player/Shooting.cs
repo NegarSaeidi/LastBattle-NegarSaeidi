@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
+
 public class Shooting : MonoBehaviour
 {
     public GameObject playerBullet;
@@ -27,10 +29,12 @@ public class Shooting : MonoBehaviour
     }
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
 
 
-        
-        if(Vector3.Magnitude(GetComponent<CharacterController>().velocity) == 0)
+
+        if (Vector3.Magnitude(GetComponent<CharacterController>().velocity) == 0)
         {
            
             if (Input.GetMouseButton(0))
@@ -62,6 +66,8 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
+      
+     
         if (!fire)
         {
             if (RemainingBullets < 1)

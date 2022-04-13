@@ -44,7 +44,7 @@ public class ItemUsage : MonoBehaviour
                     else if (gameObject.name == "LIFE_ELIXIR")
                         TakeDamage.addHealth = true;
                     Debug.Log("Item destroyed type: " + inventory.listOfItems[i].item.type);
-                 
+                    GetComponent<AudioSource>().Play();
 
                     inventory.listOfItems[i].SubtractQuantity(inventory.listOfItems[i].quantity);
                 }
@@ -56,7 +56,7 @@ public class ItemUsage : MonoBehaviour
             {
                 if (inventory.listOfItems[i].item.name == gameObject.name)
                 {
-                   
+                    GetComponent<AudioSource>().Play();
 
                     AssignInventoryToPlayer.visibleItems.Remove(inventory.listOfItems[i].item);
                     if (gameObject.name == "SilentShield")
@@ -70,7 +70,7 @@ public class ItemUsage : MonoBehaviour
                   
 
                     inventory.RemoveItem(inventory.listOfItems[i].item, 1);
-                    Destroy(gameObject);
+                    Destroy(gameObject, 0.2f);
                 }
             }
             //if ((GetComponent<AudioSource>().isPlaying))
