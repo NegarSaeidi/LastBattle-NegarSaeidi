@@ -10479,7 +10479,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pickup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c8a8b0e7c09d13943b0d8eaf7951f9cf, type: 3}
 --- !u!1 &388393104
 GameObject:
@@ -37383,7 +37384,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pickup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c8a8b0e7c09d13943b0d8eaf7951f9cf, type: 3}
 --- !u!4 &1722413700 stripped
 Transform:
@@ -43179,7 +43181,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Pickup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c8a8b0e7c09d13943b0d8eaf7951f9cf, type: 3}
 --- !u!1001 &2041743043
 PrefabInstance:

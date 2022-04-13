@@ -49,6 +49,7 @@ public class AssignInventoryToPlayer : MonoBehaviour
                 }
                 else
                 {
+                   
                     MovementController.shieldCount++;
                    
                 }
